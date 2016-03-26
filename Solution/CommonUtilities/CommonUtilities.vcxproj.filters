@@ -4,15 +4,171 @@
     <Filter Include="PreCompile">
       <UniqueIdentifier>{ab841d6e-42bb-4d4e-85cc-b7c0d06e6374}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Container">
+      <UniqueIdentifier>{b4eaa805-3e76-498d-a686-d55da7aeb2e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Container\Heap">
+      <UniqueIdentifier>{9650fbf6-05a0-4a26-a7fa-c149cf174d35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Container\Array">
+      <UniqueIdentifier>{b0c5420d-b117-4493-9af9-381623fcc398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{90e8d2ec-4e47-46ff-bb4a-7e0b89758abd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Vector">
+      <UniqueIdentifier>{5e6746cd-9559-4cb7-b5c1-047a316e1181}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Matrix">
+      <UniqueIdentifier>{d20929d7-3063-4330-9269-6fb7f096a0a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Utilities">
+      <UniqueIdentifier>{75f41f1b-a8de-450c-a3b1-82d09f09fe48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collision">
+      <UniqueIdentifier>{8b0a16bc-8439-43cc-9fa4-85d2eafc6f03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{4b4b1faa-2c35-4a02-8b59-b30263d2cb40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileReader">
+      <UniqueIdentifier>{c203091f-add1-4fae-8056-a94e3c2fdee5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileReader\XML">
+      <UniqueIdentifier>{3fc32aa9-5569-4817-b1de-01ecdf27ff05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{2b0e5887-7f1f-436f-b4fb-09588e5eb600}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>PreCompile</Filter>
     </ClCompile>
+    <ClCompile Include="MathHelper.cpp">
+      <Filter>Math\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera2D.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>FileReader\XML</Filter>
+    </ClCompile>
+    <ClCompile Include="XMLReader.cpp">
+      <Filter>FileReader\XML</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>PreCompile</Filter>
+    </ClInclude>
+    <ClInclude Include="Greater.h">
+      <Filter>Container\Heap</Filter>
+    </ClInclude>
+    <ClInclude Include="Heap.h">
+      <Filter>Container\Heap</Filter>
+    </ClInclude>
+    <ClInclude Include="Lesser.h">
+      <Filter>Container\Heap</Filter>
+    </ClInclude>
+    <ClInclude Include="GrowingArray.h">
+      <Filter>Container\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticArray.h">
+      <Filter>Container\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorOnStack.h">
+      <Filter>Container\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2decl.h">
+      <Filter>Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3decl.h">
+      <Filter>Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4.h">
+      <Filter>Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4decl.h">
+      <Filter>Math\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix33.h">
+      <Filter>Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix33decl.h">
+      <Filter>Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix44.h">
+      <Filter>Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix44decl.h">
+      <Filter>Math\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="MathHelper.h">
+      <Filter>Math\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="AABB.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Intersection.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="LineSegment2D.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="LineSegment3D.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="LineVolume.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaneVolume.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera2D.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Fov90Frustum.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>FileReader\XML</Filter>
+    </ClInclude>
+    <ClInclude Include="XMLReader.h">
+      <Filter>FileReader\XML</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonHelper.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="GameConstants.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEnum.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStructs.h">
+      <Filter>Utilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

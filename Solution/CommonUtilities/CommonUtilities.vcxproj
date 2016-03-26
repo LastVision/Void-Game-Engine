@@ -55,6 +55,7 @@
       <SDLCheck>true</SDLCheck>
       <TreatWarningAsError>true</TreatWarningAsError>
       <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(SolutionDir)DL_Debug\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -70,6 +71,7 @@
       <SDLCheck>true</SDLCheck>
       <TreatWarningAsError>true</TreatWarningAsError>
       <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(SolutionDir)DL_Debug\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -79,13 +81,53 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AABB.h" />
+    <ClInclude Include="Camera2D.h" />
+    <ClInclude Include="CommonHelper.h" />
+    <ClInclude Include="Fov90Frustum.h" />
+    <ClInclude Include="GameConstants.h" />
+    <ClInclude Include="GameEnum.h" />
+    <ClInclude Include="GameStructs.h" />
+    <ClInclude Include="Greater.h" />
+    <ClInclude Include="GrowingArray.h" />
+    <ClInclude Include="Heap.h" />
+    <ClInclude Include="Intersection.h" />
+    <ClInclude Include="Lesser.h" />
+    <ClInclude Include="Line.h" />
+    <ClInclude Include="LineSegment2D.h" />
+    <ClInclude Include="LineSegment3D.h" />
+    <ClInclude Include="LineVolume.h" />
+    <ClInclude Include="MathHelper.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="Matrix33.h" />
+    <ClInclude Include="Matrix33decl.h" />
+    <ClInclude Include="Matrix44.h" />
+    <ClInclude Include="Matrix44decl.h" />
+    <ClInclude Include="Plane.h" />
+    <ClInclude Include="PlaneVolume.h" />
+    <ClInclude Include="Sphere.h" />
+    <ClInclude Include="StaticArray.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="Vector.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Vector2decl.h" />
+    <ClInclude Include="Vector3.h" />
+    <ClInclude Include="Vector3decl.h" />
+    <ClInclude Include="Vector4.h" />
+    <ClInclude Include="Vector4decl.h" />
+    <ClInclude Include="VectorOnStack.h" />
+    <ClInclude Include="XMLReader.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Camera2D.cpp" />
+    <ClCompile Include="MathHelper.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="XMLReader.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
