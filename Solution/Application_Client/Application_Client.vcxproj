@@ -55,9 +55,11 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>$(SolutionDir)TimerManager\;$(SolutionDir)InputManager\;$(SolutionDir)DL_Debug\;$(SolutionDir)CommonUtilities\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -69,11 +71,13 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>$(SolutionDir)TimerManager\;$(SolutionDir)InputManager\;$(SolutionDir)DL_Debug\;$(SolutionDir)CommonUtilities\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -85,6 +89,17 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtilities\CommonUtilities.vcxproj">
+      <Project>{4ed2ea4d-5096-411d-8987-5e5dc3087a0c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\DL_Debug\DL_Debug.vcxproj">
+      <Project>{e274bbb5-b5ed-4b34-b630-aa9817bf6ba8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TimerManager\TimerManager.vcxproj">
+      <Project>{2bb040dd-9b08-48fb-ad5a-95ede2a7e5b3}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
