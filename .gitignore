@@ -36,4 +36,4 @@ Temp/
 *.psess
 *.suo
 *.pdb
-
+*.log
