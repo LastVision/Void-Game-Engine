@@ -98,7 +98,7 @@ namespace DL_Debug
 	{
 	public:
 
-		static bool Create(std::string aFile = "DebugLogger.txt");
+		static bool Create(std::string aFile = "DebugLogger.log");
 		static bool Destroy();
 		static Debug* GetInstance();
 
