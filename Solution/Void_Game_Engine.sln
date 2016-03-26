@@ -5,6 +5,20 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application_Client", "Application_Client\Application_Client.vcxproj", "{63E1BA35-A003-41C6-8C57-5A8DA6A2631D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Executables (EXEs and DLLs)", "Executables (EXEs and DLLs)", "{C01496A5-7774-42CD-BE8C-81C1E0A7B369}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{9D741733-8E8B-495E-8F98-90271DC33749}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{36A5C020-7D6C-4B28-91FE-2CF1DD7FFAD1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommonUtilities", "CommonUtilities\CommonUtilities.vcxproj", "{4ED2EA4D-5096-411D-8987-5E5DC3087A0C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TimerManager", "TimerManager\TimerManager.vcxproj", "{2BB040DD-9B08-48FB-AD5A-95EDE2A7E5B3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InputManager", "InputManager\InputManager.vcxproj", "{B51F197D-1F2E-494E-AB15-D5BD79753402}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphicsEngine", "GraphicsEngine\GraphicsEngine.vcxproj", "{71ADB034-E6E0-4722-B9B4-010847E3E29D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,8 +29,31 @@ Global
 		{63E1BA35-A003-41C6-8C57-5A8DA6A2631D}.Debug|Win32.Build.0 = Debug|Win32
 		{63E1BA35-A003-41C6-8C57-5A8DA6A2631D}.Release|Win32.ActiveCfg = Release|Win32
 		{63E1BA35-A003-41C6-8C57-5A8DA6A2631D}.Release|Win32.Build.0 = Release|Win32
+		{4ED2EA4D-5096-411D-8987-5E5DC3087A0C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4ED2EA4D-5096-411D-8987-5E5DC3087A0C}.Debug|Win32.Build.0 = Debug|Win32
+		{4ED2EA4D-5096-411D-8987-5E5DC3087A0C}.Release|Win32.ActiveCfg = Release|Win32
+		{4ED2EA4D-5096-411D-8987-5E5DC3087A0C}.Release|Win32.Build.0 = Release|Win32
+		{2BB040DD-9B08-48FB-AD5A-95EDE2A7E5B3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2BB040DD-9B08-48FB-AD5A-95EDE2A7E5B3}.Debug|Win32.Build.0 = Debug|Win32
+		{2BB040DD-9B08-48FB-AD5A-95EDE2A7E5B3}.Release|Win32.ActiveCfg = Release|Win32
+		{2BB040DD-9B08-48FB-AD5A-95EDE2A7E5B3}.Release|Win32.Build.0 = Release|Win32
+		{B51F197D-1F2E-494E-AB15-D5BD79753402}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B51F197D-1F2E-494E-AB15-D5BD79753402}.Debug|Win32.Build.0 = Debug|Win32
+		{B51F197D-1F2E-494E-AB15-D5BD79753402}.Release|Win32.ActiveCfg = Release|Win32
+		{B51F197D-1F2E-494E-AB15-D5BD79753402}.Release|Win32.Build.0 = Release|Win32
+		{71ADB034-E6E0-4722-B9B4-010847E3E29D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{71ADB034-E6E0-4722-B9B4-010847E3E29D}.Debug|Win32.Build.0 = Debug|Win32
+		{71ADB034-E6E0-4722-B9B4-010847E3E29D}.Release|Win32.ActiveCfg = Release|Win32
+		{71ADB034-E6E0-4722-B9B4-010847E3E29D}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63E1BA35-A003-41C6-8C57-5A8DA6A2631D} = {C01496A5-7774-42CD-BE8C-81C1E0A7B369}
+		{4ED2EA4D-5096-411D-8987-5E5DC3087A0C} = {36A5C020-7D6C-4B28-91FE-2CF1DD7FFAD1}
+		{2BB040DD-9B08-48FB-AD5A-95EDE2A7E5B3} = {36A5C020-7D6C-4B28-91FE-2CF1DD7FFAD1}
+		{B51F197D-1F2E-494E-AB15-D5BD79753402} = {36A5C020-7D6C-4B28-91FE-2CF1DD7FFAD1}
+		{71ADB034-E6E0-4722-B9B4-010847E3E29D} = {9D741733-8E8B-495E-8F98-90271DC33749}
 	EndGlobalSection
 EndGlobal
