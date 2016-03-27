@@ -4,3 +4,4 @@
 del /S *.sdf
 del /S *.ilk
 del /S *.pdb
+del /S *.log
