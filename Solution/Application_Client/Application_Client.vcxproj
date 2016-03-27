@@ -55,7 +55,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(SolutionDir)TimerManager\;$(SolutionDir)InputManager\;$(SolutionDir)DL_Debug\;$(SolutionDir)CommonUtilities\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GraphicsEngine\;$(SolutionDir)Game_Client\;$(SolutionDir)TimerManager\;$(SolutionDir)InputManager\;$(SolutionDir)DL_Debug\;$(SolutionDir)CommonUtilities\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -71,7 +71,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(SolutionDir)TimerManager\;$(SolutionDir)InputManager\;$(SolutionDir)DL_Debug\;$(SolutionDir)CommonUtilities\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GraphicsEngine\;$(SolutionDir)Game_Client\;$(SolutionDir)TimerManager\;$(SolutionDir)InputManager\;$(SolutionDir)DL_Debug\;$(SolutionDir)CommonUtilities\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -96,6 +96,15 @@
     </ProjectReference>
     <ProjectReference Include="..\DL_Debug\DL_Debug.vcxproj">
       <Project>{e274bbb5-b5ed-4b34-b630-aa9817bf6ba8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Game_Client\Game_Client.vcxproj">
+      <Project>{59323243-73b6-4b07-aeb7-64318eb1b4d0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphicsEngine\GraphicsEngine.vcxproj">
+      <Project>{71adb034-e6e0-4722-b9b4-010847e3e29d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\InputManager\InputManager.vcxproj">
+      <Project>{b51f197d-1f2e-494e-ab15-d5bd79753402}</Project>
     </ProjectReference>
     <ProjectReference Include="..\TimerManager\TimerManager.vcxproj">
       <Project>{2bb040dd-9b08-48fb-ad5a-95ede2a7e5b3}</Project>
