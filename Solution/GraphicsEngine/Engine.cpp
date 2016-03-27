@@ -1,4 +1,6 @@
 #include "stdafx.h"
+
+#include "DirectX.h"
 #include "Engine.h"
 #include "SetupInfo.h"
 #include <Windows.h>
@@ -8,10 +10,16 @@ namespace VoidGameEngine
 	Engine* Engine::myInstance = nullptr;
 
 	Engine::Engine()
+		: myClearColor({ 0.8f, 0.125f, 0.8f, 1.0f })
+		, myWireframeIsOn(false)
+		, myWireframeShouldShow(false)
 	{}
 
 	Engine::~Engine()
-	{}
+	{
+		delete myDirectX;
+		myDirectX = nullptr;
+	}
 
 	bool Engine::Create(HWND& aWindowHandler, WNDPROC aWndProc, const SetupInfo& aSetupInfo)
 	{
@@ -21,7 +29,10 @@ namespace VoidGameEngine
 
 		bool result = myInstance->Initialize(aWindowHandler, aWndProc);
 
-		//TODO: Enable fullscreen here when supported
+		if (aSetupInfo.myWindowed == false)
+		{
+			myInstance->myDirectX->SetFullscreen(true);
+		}
 
 		myInstance->Render();
 
@@ -36,13 +47,120 @@ namespace VoidGameEngine
 
 	void Engine::Render()
 	{
-		//TODO: Handle Rendering
+		myDirectX->Present(0, 0);
+		myDirectX->Clear(myClearColor);
 	}
 
 	void Engine::OnResize(const CU::Vector2<int>& aWindowSize)
 	{
 		myWindowSize = aWindowSize;
-		//TODO: HandleResize here
+		
+		if (myDirectX != nullptr)
+		{
+			myDirectX->OnResize(aWindowSize);
+		}
+	}
+
+	const bool Engine::IsFullscreen() const
+	{
+		return myDirectX->IsFullscreen();
+	}
+
+	void Engine::SetFullscreen(const bool aFullscreenFlag)
+	{
+		myDirectX->SetFullscreen(aFullscreenFlag);
+	}
+
+	void Engine::SetDebugName(ID3D11DeviceChild* aChild, const std::string& aName)
+	{
+		myDirectX->SetDebugName(aChild, aName);
+	}
+
+	ID3D11Device* Engine::GetDevice()
+	{
+		return myDirectX->GetDevice();
+	}
+
+	ID3D11DeviceContext* Engine::GetContex()
+	{
+		return myDirectX->GetContex();
+	}
+
+	ID3D11DepthStencilView* Engine::GetDepthView()
+	{
+		return myDirectX->GetDepthStencil();
+	}
+
+	ID3D11RenderTargetView* Engine::GetDepthBuffer()
+	{
+		return myDirectX->GetDepthBuffer();
+	}
+
+	ID3D11ShaderResourceView* Engine::GetBackbufferView()
+	{
+		return myDirectX->GetBackbufferView();
+	}
+
+	ID3D11Texture2D* Engine::GetDepthBufferTexture()
+	{
+		return myDirectX->GetDepthbufferTexture();
+	}
+
+	void Engine::RestoreViewPort()
+	{
+		myDirectX->RestoreViewPort();
+	}
+
+	void Engine::SetBackBufferAsTarget()
+	{
+		myDirectX->SetBackBufferAsTarget();
+	}
+
+	void Engine::EnableZBuffer()
+	{
+		myDirectX->EnableZBuffer();
+	}
+
+	void Engine::DisableZBuffer()
+	{
+		myDirectX->DisableZBuffer();
+	}
+
+	void Engine::ToggleWireframe()
+	{
+		myDirectX->EnableWireframe();
+
+
+		if (myWireframeIsOn == true)
+		{
+			myDirectX->DisableWireframe();
+			myWireframeIsOn = false;
+			myWireframeShouldShow = false;
+			return;
+		}
+
+		myWireframeShouldShow = true;
+		myWireframeIsOn = true;
+	}
+
+	void Engine::EnableWireframe()
+	{
+		myDirectX->EnableWireframe();
+	}
+
+	void Engine::DisableWireframe()
+	{
+		myDirectX->DisableWireframe();
+	}
+
+	void Engine::EnableCulling()
+	{
+		myDirectX->EnableCulling();
+	}
+
+	void Engine::DisableCulling()
+	{
+		myDirectX->DisableCulling();
 	}
 
 	bool Engine::Initialize(HWND& aWindowHandler, WNDPROC aWndProc)
@@ -56,7 +174,12 @@ namespace VoidGameEngine
 			return false;
 		}
 
-		//TODO: Setup DirectX later enable OpenGL support
+		myDirectX = new DirectX(aWindowHandler, *mySetupInfo);
+		if (myDirectX == nullptr)
+		{
+			ENGINE_LOG("Failed to Setup DirectX");
+			return false;
+		}
 
 		ShowWindow(aWindowHandler, 10);
 		UpdateWindow(aWindowHandler);
