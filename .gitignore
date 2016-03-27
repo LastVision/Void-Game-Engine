@@ -37,3 +37,5 @@ Temp/
 *.suo
 *.pdb
 
+Workbed/log/2016-03-28_00_41_05_DebugLogger.log
+*.ilk
