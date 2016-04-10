@@ -32,10 +32,12 @@
 
 *.sdf
 *.opensdf
-Temp/
 *.psess
 *.suo
 *.pdb
 *.log
 *.ilk
 
+#folders
+Temp/
+Libs3rdParty/
