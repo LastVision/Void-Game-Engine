@@ -55,11 +55,12 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(SolutionDir)GraphicsEngine\;$(SolutionDir)Game_Client\;$(SolutionDir)TimerManager\;$(SolutionDir)InputManager\;$(SolutionDir)DL_Debug\;$(SolutionDir)CommonUtilities\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Libs3rdParty\Vulkan\Include\;$(SolutionDir)GraphicsEngine\;$(SolutionDir)Game_Client\;$(SolutionDir)TimerManager\;$(SolutionDir)InputManager\;$(SolutionDir)DL_Debug\;$(SolutionDir)CommonUtilities\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\Libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Libs\;$(SolutionDir)..\Libs3rdParty\Vulkan\Libs\x86\;$(SolutionDir)..\Libs3rdParty\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -71,13 +72,14 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(SolutionDir)GraphicsEngine\;$(SolutionDir)Game_Client\;$(SolutionDir)TimerManager\;$(SolutionDir)InputManager\;$(SolutionDir)DL_Debug\;$(SolutionDir)CommonUtilities\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Libs3rdParty\Vulkan\Include\;$(SolutionDir)GraphicsEngine\;$(SolutionDir)Game_Client\;$(SolutionDir)TimerManager\;$(SolutionDir)InputManager\;$(SolutionDir)DL_Debug\;$(SolutionDir)CommonUtilities\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\Libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Libs\;$(SolutionDir)..\Libs3rdParty\Vulkan\Libs\x86\;$(SolutionDir)..\Libs3rdParty\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -6,7 +6,6 @@
 #include <iostream>
 #include <InputManager.h>
 #include <TimerManager.h>
-#include <SetupInfo.h>
 #include <Windows.h>
 
-#include <Engine.h>
+#include <VulkanInterface.h>

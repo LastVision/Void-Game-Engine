@@ -4,32 +4,30 @@
     <Filter Include="PreCompile">
       <UniqueIdentifier>{ab841d6e-42bb-4d4e-85cc-b7c0d06e6374}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DirectX">
-      <UniqueIdentifier>{23d08eb4-9d9a-40f7-9753-48a2e48c89c2}</UniqueIdentifier>
+    <Filter Include="Rendering">
+      <UniqueIdentifier>{051604bd-702b-45ef-aa5c-8072f7cc7524}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Utilities">
-      <UniqueIdentifier>{a9cd6dae-6d30-4e58-b9ef-acdb591c501e}</UniqueIdentifier>
+    <Filter Include="Rendering\API">
+      <UniqueIdentifier>{35351232-e246-477c-bfa9-a79fc511b310}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering\API\Vulkan">
+      <UniqueIdentifier>{4ae1c74f-2594-4396-8f21-e2d00b3878cf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>PreCompile</Filter>
     </ClCompile>
-    <ClCompile Include="Engine.cpp" />
-    <ClCompile Include="DirectX.cpp">
-      <Filter>DirectX</Filter>
+    <ClCompile Include="VulkanInterface.cpp">
+      <Filter>Rendering\API\Vulkan</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>PreCompile</Filter>
     </ClInclude>
-    <ClInclude Include="SetupInfo.h">
-      <Filter>Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine.h" />
-    <ClInclude Include="DirectX.h">
-      <Filter>DirectX</Filter>
+    <ClInclude Include="VulkanInterface.h">
+      <Filter>Rendering\API\Vulkan</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,35 +3,27 @@
 LRESULT CALLBACK WndProc(HWND aWindowHandler, UINT aMessage, WPARAM aWParam, LPARAM aLParam);
 void OnResize();
 void CleanUp();
-bool ReadSetup(const std::string& aFilePath, VGE::SetupInfo& aOutputSetupInfo);
 
 Game* locGame = nullptr;
 CU::Vector2<int> locWindowSize(800, 600);
 bool locWindowActive = false;
 bool locWindowResizeing = false;
-VGE::SetupInfo locSetup;
 
-int WINAPI WinMain(HINSTANCE aInstanceHandler, HINSTANCE, LPTSTR, int)
+int WINAPI WinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
 	bool isRunning = true;
 	DL_Debug::Debug::Create();
 	CU::TimerManager::Create();
 
-	if (ReadSetup("Not used yet", locSetup) == false)
-	{
-		MessageBox(NULL, "Failed to read setup file.", "Failed startup", MB_ICONERROR);
-		return 1;
-	}
+	
 
-	HWND hwnd;
-	if (VGE::Engine::Create(hwnd, WndProc, locSetup) == false)
-	{
-		return 1;
-	}
-
+	Vulkan test;
+	test.Create();
+	test.Destroy();
+	/*HWND hwnd;
 	CU::InputManager::GetInstance()->Create(hwnd, aInstanceHandler, 
 		DISCL_NONEXCLUSIVE | DISCL_FOREGROUND, 
-		DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);
+		DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);*/
 
 	locGame = new Game();
 	if (locGame->Initialize() == false)
@@ -40,7 +32,7 @@ int WINAPI WinMain(HINSTANCE aInstanceHandler, HINSTANCE, LPTSTR, int)
 		return 1;
 	}
 
-	SetActiveWindow(hwnd);
+	//SetActiveWindow(hwnd);
 
 	float deltaTime = 0;
 	MSG message;
@@ -63,10 +55,10 @@ int WINAPI WinMain(HINSTANCE aInstanceHandler, HINSTANCE, LPTSTR, int)
 				isRunning = false;
 				break;
 			}
-			VGE::Engine::GetInstance()->Render();
 		}
 	}
 	CleanUp();
+
 	return 0;
 }
 
@@ -109,11 +101,6 @@ LRESULT CALLBACK WndProc(HWND aWindowHandler, UINT aMessage, WPARAM aWParam, LPA
 	case WM_SIZE:
 		locWindowSize.x = LOWORD(aLParam);
 		locWindowSize.y = HIWORD(aLParam);
-
-		if (locWindowSize.x >= locSetup.myScreenWidth)
-			locWindowSize.x = locSetup.myScreenWidth;
-		if (locWindowSize.y >= locSetup.myScreenHeight)
-			locWindowSize.y = locSetup.myScreenHeight;
 
 		if (LOWORD(aWParam) == SIZE_MINIMIZED)
 		{
@@ -175,17 +162,7 @@ void CleanUp()
 
 	CU::InputManager::Destroy();
 	CU::TimerManager::Destroy();
-	VGE::Engine::Destroy();
+	
 
 	DL_Debug::Debug::Destroy();
-}
-
-bool ReadSetup(const std::string& aFilePath, VGE::SetupInfo& aOutputSetupInfo)
-{
-	aFilePath;
-	aOutputSetupInfo.myScreenWidth = 800;
-	aOutputSetupInfo.myScreenHeight = 600;
-	aOutputSetupInfo.myWindowed = true;
-	aOutputSetupInfo.myWindowTitle = "TestWindow";
-	return true;
 }
